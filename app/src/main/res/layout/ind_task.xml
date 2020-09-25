@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wall">
+
+    <LinearLayout
+        android:id="@+id/Task_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="horizontal"
+        android:textAlignment="center">
+
+        <ImageButton
+            android:id="@+id/t_backarrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            app:srcCompat="@drawable/arrow_back_black" />
+
+        <TextView
+            android:id="@+id/t_tvtask"
+            android:layout_width="286dp"
+            android:layout_height="wrap_content"
+            android:text="@string/task"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="32sp" />
+
+        <ImageView
+            android:id="@+id/t_morebtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="task_onButtonShowPopupWindowClick"
+            app:srcCompat="@drawable/more_vert2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dust_id"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="horizontal"
+        android:textAlignment="center">
+
+        <TextView
+            android:id="@+id/textView_db"
+            android:layout_width="195.0dip"
+            android:layout_height="fill_parent"
+            android:padding="10.0dp"
+            android:text="@string/dustbnid"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30.0sp" />
+
+        <TextView
+            android:id="@+id/t_edtdid"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.5"
+            android:padding="10.0dip"
+            android:text="@string/npeg"
+            android:textAlignment="viewStart"
+            android:textColor="@color/greenish1"
+            android:textSize="30.0sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="580dp"
+        android:layout_below="@id/dust_id"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="3dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8.0dip"
+            android:layout_marginEnd="8.0dip"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView_bf"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_weight="0.5"
+                android:padding="5dp"
+                android:text="@string/bf4cleaning"
+                android:textAlignment="center"
+                android:textColor="@color/greenish1"
+                android:textSize="28.0sp" />
+
+            <TextView
+                android:id="@+id/textView_af"
+                android:layout_width="wrap_content"
+                android:layout_height="85.0dip"
+                android:layout_weight="0.5"
+                android:padding="5.0dip"
+                android:text="@string/aftcleaning"
+                android:textAlignment="center"
+                android:textColor="@color/greenish1"
+                android:textSize="28.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="325dp"
+            android:layout_marginStart="8.0dip"
+            android:layout_marginEnd="8.0dip"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/t_iv_beforecleaning"
+                android:layout_width="180dp"
+                android:layout_height="300dp"
+                android:layout_margin="15dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/wallpaper"
+                android:scaleType="fitCenter" />
+
+            <ImageView
+                android:id="@+id/t_iv_aftercleaning"
+                android:layout_width="180.0dp"
+                android:layout_height="300dp"
+                android:layout_margin="15.0dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/wallpaper"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="75.0dip"
+            android:orientation="horizontal"
+            android:textAlignment="center">
+
+            <Button
+                android:id="@+id/t_btnbfclean"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30.0dp"
+                android:layout_marginRight="30.0dp"
+                android:layout_weight="1.0"
+                android:background="@drawable/btn_greenish"
+                android:text="@string/click"
+                android:textAlignment="center"
+                android:textSize="14.0sp" />
+
+            <Button
+                android:id="@+id/t_btnaftclean"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1.0"
+                android:background="@drawable/btn_greenish"
+                android:text="@string/click"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                tools:ignore="ButtonStyle" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/t_btnsubmit"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="125dp"
+            android:background="@drawable/btn_reddish"
+            android:text="@string/submit"
+            android:textSize="18.0sp" />
+    </LinearLayout>
+</RelativeLayout>

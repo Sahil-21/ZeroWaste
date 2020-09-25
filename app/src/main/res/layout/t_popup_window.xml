@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_gravity="center" android:background="@color/colorPrimary" android:padding="25.0dip" android:layout_width="275.0dip" android:layout_height="225.0dip" android:elevation="5.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button android:id="@id/clearpic" android:background="@color/white" android:layout_width="250.0dip" android:layout_height="60.0dip" android:text="@string/clr_pic1" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <Button android:id="@id/newpic" android:background="@color/white" android:layout_width="250.0dip" android:layout_height="60.0dip" android:text="@string/clr_pic2" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/clearpic" />
+    <Button android:id="@id/addpic" android:background="@color/white" android:layout_width="250.0dip" android:layout_height="60.0dip" android:text="@string/clr_pic" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/newpic" />
+</androidx.constraintlayout.widget.ConstraintLayout>

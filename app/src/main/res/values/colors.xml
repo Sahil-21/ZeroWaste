@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#2ECC71</color>
+    <color name="colorAccent">#99E6BA</color>
+    <color name="profback">#D6ECDF</color>
+    <color name="lg">#AAF3E1</color>
+    <color name="signgoogle">#FFFFFF</color>
+    <color name="colorextradark">#19C361</color>
+    <color name="white">#FFFFFF</color>
+    <color name="greenish1">#ff28df99</color>
+    <color name="greenish2">#ff99f3bd</color>
+    <color name="greenish3">#ffd2f6c5</color>
+    <color name="greenish4">#fff6f7d4</color>
+    <color name="black">#ff000000</color>
+    <color name="splashscreenbackground">#ffebf7e9</color>
+    <color name="blue">#fff44c18</color>
+    <color name="reddish">#f9d56e</color>
+    <color name="headerback">#f7f8fa</color>
+</resources>
