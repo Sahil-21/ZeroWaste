@@ -28,12 +28,14 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
+import com.example.zerowaste.task_add.TaskFragment;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Profile extends AppCompatActivity  {
+public class Profile extends AppCompatActivity {
     public static final int CAMERA_PER_CODE = 101;
     public static final int CAMERA_REQUEST_CODE = 102;
     public static final int GALLERY_REQUEST_CODE = 105;
@@ -47,4 +49,8 @@ public class Profile extends AppCompatActivity  {
         selectedImage = findViewById(R.id.profile_pic);
     }
 
+    public void onclick_task_card(View view) {
+        startActivity(new Intent(getApplicationContext(), TaskFragment.class));
     }
+
+}

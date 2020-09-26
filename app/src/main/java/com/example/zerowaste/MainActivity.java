@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.zerowaste.task_add.TaskFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.luseen.spacenavigation.SpaceItem;
 import com.luseen.spacenavigation.SpaceNavigationView;
@@ -83,10 +84,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 navigationView.setCheckedItem(R.id.nav_home);
                 break;
             case R.id.nav_task:
-                startActivity(new Intent(getApplicationContext(), Task.class));
+                startActivity(new Intent(getApplicationContext(), Task_View.class));
+                navigationView.setCheckedItem(R.id.nav_home);
                 break;
             case R.id.nav_message:
                 startActivity(new Intent(getApplicationContext(), MessageFragment.class));
+                navigationView.setCheckedItem(R.id.nav_home);
                 break;
         }
 

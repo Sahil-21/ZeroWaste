@@ -82,4 +82,14 @@
     <string name="track">Track</string>
     <string name="arr_min">Track all the Bins</string>
     <string name="quote">Dont call the world \n dirty because you\n forgot to clean your glasses.</string>
+    <string name="textview">txttt</string>
+    <string name="tsk">Task</string>
+    <string name="o">0</string>
+    <string name="add_Bin">Add bin</string>
+    <string name="lat">Lat</string>
+    <string name="col">:</string>
+    <string name="lon">Lon</string>
+    <string name="current_loc">Curr_Loc</string>
+    <string name="rem_task">Remaning Task</string>
+    <string name="com_task">Completed task</string>
 </resources>

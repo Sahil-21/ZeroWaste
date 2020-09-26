@@ -33,9 +33,13 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"></activity>
         <activity android:name=".Sign_up" />
-        <activity android:name=".Task"
+        <activity android:name=".Task_View"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Task_Individual"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".Login" />
+        <activity android:name=".task_add.TaskFragment"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MessageFragment"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".Profile"
