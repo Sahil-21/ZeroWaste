@@ -92,4 +92,5 @@
     <string name="current_loc">Curr_Loc</string>
     <string name="rem_task">Remaning Task</string>
     <string name="com_task">Completed task</string>
+    <string name="bin">Bin</string>
 </resources>

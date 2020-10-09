@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "583716414985",
+    "firebase_url": "https://smart-garbage-monitoring-app.firebaseio.com",
+    "project_id": "smart-garbage-monitoring-app",
+    "storage_bucket": "smart-garbage-monitoring-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583716414985:android:c4f53a16b7b5d6ccd7bad8",
+        "android_client_info": {
+          "package_name": "com.example.zerowaste"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "583716414985-71mlnprald55k63lrepqbadf0h86575d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaPYDVsCXsVQ1io1dRrHSnxyyDbbE3Gyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "583716414985-71mlnprald55k63lrepqbadf0h86575d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
