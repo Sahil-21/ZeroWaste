@@ -34,6 +34,7 @@ import androidx.core.content.FileProvider;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import com.example.zerowaste.historicdata.data_main;
 import com.example.zerowaste.model.User;
 import com.example.zerowaste.model.databaseHelper;
 import com.example.zerowaste.note.note_add_Frag;
@@ -137,7 +138,8 @@ public class Profile extends AppCompatActivity {
     }
 
     public void onclick_task_card(View view) {
-        startActivity(new Intent(getApplicationContext(), note_add_Frag.class));
+
+        startActivity(new Intent(getApplicationContext(), data_main.class));
     }
 
     public void onButtonShowPopupWindowClick(View view) {

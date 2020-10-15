@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.zerowaste.historicdata.data_main;
+import com.example.zerowaste.map.Map_item_view;
 import com.example.zerowaste.note.*;
 
 import android.app.AlarmManager;
@@ -69,14 +70,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     new HomeFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
         }
-
-
-        SpaceNavigationView spaceNavigationView = (SpaceNavigationView) findViewById(R.id.space);
-        spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
-        spaceNavigationView.addSpaceItem(new SpaceItem("HOME", R.drawable.trash));
-        spaceNavigationView.addSpaceItem(new SpaceItem("SEARCH", R.drawable.task));
-        spaceNavigationView.showIconOnly();
-        spaceNavigationView.setSpaceItemIconSizeInOnlyIconMode((int) getResources().getDimension(R.dimen.yourDimen));
 
 
         FileInputStream fis = null;
@@ -142,24 +135,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
         }
-
-
-        spaceNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
-            @Override
-            public void onCentreButtonClick() {
-                Toast.makeText(MainActivity.this, "onCentreButtonClick", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onItemClick(int itemIndex, String itemName) {
-                Toast.makeText(MainActivity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onItemReselected(int itemIndex, String itemName) {
-                Toast.makeText(MainActivity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
-            }
-        });
 
     }
 

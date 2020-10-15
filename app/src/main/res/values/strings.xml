@@ -53,7 +53,7 @@
     <string name="space_scrolling_view_behavior">com.luseen.spacenavigation.SpaceNavigationViewBehavior</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="submit">Submit</string>
-    <string name="task">Task Completed</string>
+    <string name="task">Task</string>
     <string name="title_activity_maps">Map</string>
     <string name="working">Element to be added</string>
     <string name="Or">Or</string>
@@ -80,7 +80,7 @@
     <string name="remaning_task">Remaning Task</string>
     <string name="total_task">Total Task</string>
     <string name="track">Track</string>
-    <string name="arr_min">Track all the Bins</string>
+    <string name="arr_min">Track the Bins</string>
     <string name="quote">Dont call the world \n dirty because you\n forgot to clean your glasses.</string>
     <string name="textview">txttt</string>
     <string name="tsk">Task</string>
@@ -93,8 +93,6 @@
     <string name="rem_task">Remaning Task</string>
     <string name="com_task">Completed task</string>
     <string name="bin">Bin</string>
-
-
 
 
     <string name="error_message_name">Enter Full Name</string>
@@ -114,4 +112,5 @@
     <string name="change_email">Change Email</string>
     <string name="change_password">Change Password</string>
     <string name="save">Save</string>
+    <string name="title_activity_maps2">Map</string>
 </resources>

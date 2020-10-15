@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -45,8 +46,13 @@ public class note_main extends AppCompatActivity {
         task_recyclerView_0.setAdapter(adapter);
         task_recyclerView_1.setAdapter(adapter1);
         int a = adapter.getItemCount();
-        Log.d("Fucked", "aDta " + a);
+        Log.d("Checking123", "aDta " + a);
 
+        Toolbar toolbar = findViewById(R.id.toolbar2);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("All Task");
 
         noteViewModel = new ViewModelProvider(this).get(NoteViewModel.class);
         noteViewModel.getAllNotes_0().observe(this, new Observer<List<Note>>() {
@@ -54,7 +60,7 @@ public class note_main extends AppCompatActivity {
             public void onChanged(@Nullable List<Note> notes) {
                 adapter.setNotes(notes);
                 int a1 = adapter.getItemCount();
-                Log.d("Fucked Twice", "aDta " + a1);
+                Log.d("Checking54321", "aDta " + a1);
 
             }
         });

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentValues;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -19,6 +20,12 @@ import com.example.zerowaste.message.MessageAdapter;
 import com.example.zerowaste.message.MessageDBHelper;
 import com.example.zerowaste.message.Message_ExampleDialog;
 import com.example.zerowaste.message.Message_List;
+import com.example.zerowaste.model.User;
+import com.example.zerowaste.model.databaseHelper;
+
+import static android.content.Context.MODE_PRIVATE;
+import static com.example.zerowaste.Login.EMAIL;
+import static com.example.zerowaste.Login.SHARED_PREFS;
 
 public class MessageFragment extends AppCompatActivity implements Message_ExampleDialog.ExampleDialogListener {
 
@@ -27,6 +34,10 @@ public class MessageFragment extends AppCompatActivity implements Message_Exampl
     private TextView sub;
     private TextView msg;
     public String subject,message;
+    databaseHelper db;
+    User curr_user;
+    String curr_email,curr_name;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +49,12 @@ public class MessageFragment extends AppCompatActivity implements Message_Exampl
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Messages");
+
+        db = new databaseHelper(this);
+        loadData();
+        curr_user = new User();
+        curr_user= db.getUser(curr_email);
+        curr_name = curr_user.getName();
 
         MessageDBHelper dbHelper = new MessageDBHelper(this);
         mDatabase = dbHelper.getWritableDatabase();
@@ -59,6 +76,12 @@ public class MessageFragment extends AppCompatActivity implements Message_Exampl
             }
         }).attachToRecyclerView(recyclerView);
 
+    }
+
+    private void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        curr_email = sharedPreferences.getString(EMAIL,"null");
+        Toast.makeText(this, curr_email, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -93,7 +116,7 @@ public class MessageFragment extends AppCompatActivity implements Message_Exampl
         if (subject.trim().length() == 0 || message.trim().length() == 0) {
             return;
         }
-        String name = "name";
+        String name = curr_name;
         ContentValues cv = new ContentValues();
         cv.put(Message_List.MessageEntry.NAME, name);
         cv.put(Message_List.MessageEntry.SUBJECT, subject);
