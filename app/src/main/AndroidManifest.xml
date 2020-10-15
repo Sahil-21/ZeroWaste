@@ -40,6 +40,9 @@
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".note.note_main" />
         <activity android:name=".historicdata.data_main" />
+        <activity android:name=".Profile_Edit" />
+        <activity android:name=".Profile_Change_Password"
+            android:parentActivityName=".Profile_Edit"/>
         <activity android:name=".Task_Individual"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".Login" />

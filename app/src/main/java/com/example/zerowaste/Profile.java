@@ -4,8 +4,8 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -13,29 +13,38 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.MimeTypeMap;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import com.example.zerowaste.model.User;
+import com.example.zerowaste.model.databaseHelper;
 import com.example.zerowaste.note.note_add_Frag;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import static com.example.zerowaste.Login.EMAIL;
+import static com.example.zerowaste.Login.SHARED_PREFS;
 
 
 public class Profile extends AppCompatActivity {
@@ -46,13 +55,85 @@ public class Profile extends AppCompatActivity {
     public static final int WESTORAGE = 106;
     CircleImageView circleImageView;
     String currentPhotoPath;
+    TextView tv_name,tv_bio,tv_email,tv_phone,tv_loc;
+    User curr_user;
+    databaseHelper db;
+    String curr_name,curr_profuri,curr_bio,curr_email,curr_phone,curr_loc;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_page);
+
+        Toolbar toolbar = findViewById(R.id.toolbar_profile);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
         circleImageView = findViewById(R.id.profile_pic);
+        tv_name= findViewById(R.id.profile_name);
+        tv_bio= findViewById(R.id.edtbio);
+        tv_email= findViewById(R.id.pp_edtemail);
+        tv_phone= findViewById(R.id.pp_phone);
+        tv_loc= findViewById(R.id.pp_loc);
+
+        db = new databaseHelper(this);
+        loadData();
+        curr_user = new User();
+        curr_user= db.getUser(curr_email);
+        curr_name = curr_user.getName();
+        curr_bio = curr_user.getBio();
+        curr_profuri = curr_user.getProf_uri();
+        curr_phone = curr_user.getPhone();
+        curr_loc = curr_user.getLoc();
+        set_values();
+    }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.edtprofile, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.edit_prof:
+                startActivity(new Intent(this, Profile_Edit.class));
+                finish();
+                return true;
+            case R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
+    private void set_values() {
+        Toast.makeText(this, curr_name, Toast.LENGTH_SHORT).show();
+        tv_name.setText(curr_name);
+        tv_bio.setText(curr_bio);
+        tv_email.setText(curr_email);
+        tv_phone.setText(curr_phone);
+        tv_loc.setText(curr_loc);
+        if(curr_profuri.equals("null1")){
+            circleImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.tqt));
+        }
+        else{
+            File f = new File(curr_profuri);
+            circleImageView.setImageURI(Uri.fromFile(f));
+        }
+
+    }
+
+    private void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        curr_email = sharedPreferences.getString(EMAIL,"null");
+        Toast.makeText(this, curr_email, Toast.LENGTH_SHORT).show();
+
     }
 
     public void onclick_task_card(View view) {
@@ -120,6 +201,8 @@ public class Profile extends AppCompatActivity {
             if(resultCode  == Activity.RESULT_OK){
                 File f = new File(currentPhotoPath);
                 circleImageView.setImageURI(Uri.fromFile(f));
+                curr_profuri = currentPhotoPath;
+                updatedatabase();
                 Log.d("tag", "ABsolute Url of Image is " + Uri.fromFile(f));
 
                 Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
@@ -140,6 +223,8 @@ public class Profile extends AppCompatActivity {
 
         }
     }
+
+
     private String getFileExt(Uri contentUri) {
         ContentResolver c = getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
@@ -170,8 +255,6 @@ public class Profile extends AppCompatActivity {
         return image;
     }
 
-
-
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // Ensure that there's a camera activity to handle the intent
@@ -194,6 +277,19 @@ public class Profile extends AppCompatActivity {
                 startActivityForResult(takePictureIntent, CAMERA_REQUEST_CODE);
             }
         }
+    }
+
+    private void updatedatabase() {
+        curr_user.setProf_uri(curr_profuri);
+        db.updateUser(curr_user);
+    }
+
+    public void remove_prof(View view){
+        curr_profuri = "null1";
+        curr_user.setProf_uri(curr_profuri);
+        db.updateUser(curr_user);
+        circleImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.tqt));
+
     }
 
 }

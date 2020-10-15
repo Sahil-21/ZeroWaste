@@ -445,7 +445,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/editTextNumber7"
+                            android:id="@+id/rem_task"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="clip_horizontal"
@@ -460,7 +460,7 @@
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/editTextNumber8"
+                            android:id="@+id/com_task"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="clip_horizontal"
@@ -475,7 +475,7 @@
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/editTextNumber9"
+                            android:id="@+id/total_task"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="clip_horizontal"

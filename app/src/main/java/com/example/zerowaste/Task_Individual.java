@@ -2,7 +2,6 @@ package com.example.zerowaste;
 
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -21,8 +20,6 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,8 +32,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.zerowaste.historicdata.Data;
 import com.example.zerowaste.historicdata.DataViewModel;
-import com.example.zerowaste.note.Note;
-import com.example.zerowaste.note.NoteViewModel;
 
 import java.io.File;
 import java.io.IOException;
@@ -56,7 +51,7 @@ public class Task_Individual extends AppCompatActivity implements View.OnClickLi
     ImageView before, after;
     public String BF_TIMESTAMP, BF_URL, AF_TIMESTAMP, AF_URL, TIMESTAMP;
     double latitude, longitude;
-    public int bin_id, iterator, person_id,ids;
+    public int bin_id, iterator, person_id, ids;
     int flag;
     public String main_url;
 
@@ -139,23 +134,14 @@ public class Task_Individual extends AppCompatActivity implements View.OnClickLi
 
 
     public void task_onButtonShowPopupWindowClick(View view) {
-
-        // inflate the layout of the popup window
         LayoutInflater inflater = (LayoutInflater)
                 getSystemService(LAYOUT_INFLATER_SERVICE);
         View popupView = inflater.inflate(R.layout.t_popup_window, null);
-
-        // create the popup window
         int width = LinearLayout.LayoutParams.WRAP_CONTENT;
         int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-        boolean focusable = true; // lets taps outside the popup also dismiss it
+        boolean focusable = true;
         final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-
-        // show the popup window
-        // which view you pass in doesn't matter, it is only used for the window tolken
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-
-        // dismiss the popup window when touched
         popupView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -179,7 +165,8 @@ public class Task_Individual extends AppCompatActivity implements View.OnClickLi
                     BF_TIMESTAMP = timeStamp0;
                     Toast.makeText(this, timeStamp0, Toast.LENGTH_SHORT).show();
 
-                } else {
+                }
+                else {
                     Toast.makeText(this, "Cannot be edited", Toast.LENGTH_SHORT).show();
                 }
 
@@ -208,7 +195,7 @@ public class Task_Individual extends AppCompatActivity implements View.OnClickLi
                     Date c = Calendar.getInstance().getTime();
                     SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
                     String formattedDate = df.format(c);
-                    Data data = new Data(id1,bin_id, person_id, latitude, longitude, iterator, BF_TIMESTAMP, BF_URL, AF_TIMESTAMP, AF_URL, formattedDate);
+                    Data data = new Data(id1, bin_id, person_id, latitude, longitude, iterator, BF_TIMESTAMP, BF_URL, AF_TIMESTAMP, AF_URL, formattedDate);
                     dataViewModel.insert(data);
                     Log.d("Fucked Twice", "Doneupdating in 2nd db " + id1);
 
@@ -231,13 +218,10 @@ public class Task_Individual extends AppCompatActivity implements View.OnClickLi
                 setResult(RESULT_OK, data);
                 finish();
         }
-
-
     }
 
     private void URL() {
         askCameraPermission();
-
     }
 
 
@@ -263,9 +247,7 @@ public class Task_Individual extends AppCompatActivity implements View.OnClickLi
                 mediaScanIntent.setData(contentUri);
                 this.sendBroadcast(mediaScanIntent);
             }
-
         }
-
     }
 
 
@@ -293,22 +275,17 @@ public class Task_Individual extends AppCompatActivity implements View.OnClickLi
 
 
     private File createImageFile() throws IOException {
-        // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
         // File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         //File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
 
         File storageDir = getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-
-
         File image = File.createTempFile(
-                imageFileName,  /* prefix */
-                ".jpg",         /* suffix */
-                storageDir      /* directory */
+                imageFileName,
+                ".jpg",
+                storageDir
         );
-
-        // Save a file: path for use with ACTION_VIEW intents
         main_url = image.getAbsolutePath();
         return image;
     }
@@ -316,16 +293,12 @@ public class Task_Individual extends AppCompatActivity implements View.OnClickLi
 
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        // Ensure that there's a camera activity to handle the intent
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            // Create the File where the photo should go
             File photoFile = null;
             try {
                 photoFile = createImageFile();
             } catch (IOException ex) {
-                // Error occurred while creating the File
-                Toast.makeText(this, "Sorry", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(this, "Sorry cannot create Image File", Toast.LENGTH_SHORT).show();
             }
             // Continue only if the File was successfully created
             if (photoFile != null) {

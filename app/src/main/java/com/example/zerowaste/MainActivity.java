@@ -62,10 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        if( FirebaseAuth.getInstance().getCurrentUser()==null){
-            Intent intent1 =new Intent(this,Login.class);
-            startActivity(intent1);
-        }
+
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -164,9 +161,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-
-
-
     }
 
 
@@ -187,6 +181,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_message:
                 startActivity(new Intent(getApplicationContext(), MessageFragment.class));
+                navigationView.setCheckedItem(R.id.nav_home);
+                break;
+
+            case R.id.nav_tracking:
+                startActivity(new Intent(getApplicationContext(), MapsActivity.class));
                 navigationView.setCheckedItem(R.id.nav_home);
                 break;
 

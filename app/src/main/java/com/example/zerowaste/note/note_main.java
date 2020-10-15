@@ -1,31 +1,19 @@
 package com.example.zerowaste.note;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.zerowaste.Profile;
 import com.example.zerowaste.R;
 import com.example.zerowaste.Task_Individual;
-import com.example.zerowaste.historicdata.Data;
 import com.example.zerowaste.historicdata.DataViewModel;
-
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class note_main extends AppCompatActivity {
