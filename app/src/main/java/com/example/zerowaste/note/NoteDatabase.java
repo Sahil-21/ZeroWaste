@@ -37,10 +37,10 @@ public abstract class NoteDatabase extends RoomDatabase {
         }
         @Override
         protected Void doInBackground(Void... voids) {
-            noteDao.insert(new Note(24,10,55.55,45.66,0,"fgd",null,"1",null, "ngdfull"));
-            noteDao.insert(new Note(23,10,55.55,45.66,0,"nufgdll",null,"1",null, "nugdfll"));
-            noteDao.insert(new Note(25,10,55.55,45.66,0,"gd",null,"1",null, "nugfdll"));
-            noteDao.insert(new Note(26,10,55.55,45.66,0,"gd",null,"1",null, "nugfdll"));
+            noteDao.insert(new Note(24,10,19.214939, 73.101066,0,"fgd",null,"1",null, "ngdfull"));
+            noteDao.insert(new Note(23,10,19.214562, 73.100734,0,"nufgdll",null,"1",null, "nugdfll"));
+            noteDao.insert(new Note(25,10,19.213792, 73.100450,0,"gd",null,"1",null, "nugfdll"));
+            noteDao.insert(new Note(26,10,19.213039, 73.100262,0,"gd",null,"1",null, "nugfdll"));
             return null;
         }
     }

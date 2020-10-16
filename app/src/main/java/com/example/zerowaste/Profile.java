@@ -133,13 +133,13 @@ public class Profile extends AppCompatActivity {
     private void loadData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         curr_email = sharedPreferences.getString(EMAIL,"null");
-        Toast.makeText(this, curr_email, Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(this, curr_email, Toast.LENGTH_SHORT).show();
 
     }
 
     public void onclick_task_card(View view) {
 
-        startActivity(new Intent(getApplicationContext(), data_main.class));
+        startActivity(new Intent(getApplicationContext(), note_add_Frag.class));
     }
 
     public void onButtonShowPopupWindowClick(View view) {

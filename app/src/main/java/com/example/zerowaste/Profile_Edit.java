@@ -24,7 +24,7 @@ import static com.example.zerowaste.Login.SHARED_PREFS;
 public class Profile_Edit extends AppCompatActivity {
     databaseHelper db;
     String curr_name,curr_profuri,curr_bio,curr_email,curr_phone,curr_loc,curr_password;
-    EditText ed_name,ed_bio,ed_phone;
+    EditText ed_name,ed_bio,ed_phone,ed_loc;
     TextView passchange,ed_email;
     Button done1;
     User curr_user;
@@ -38,6 +38,8 @@ public class Profile_Edit extends AppCompatActivity {
         ed_bio = findViewById(R.id.pd_edBio);
         ed_phone = findViewById(R.id.pd_edphone);
         ed_email = findViewById(R.id.pd_email);
+        ed_loc= findViewById(R.id.pd_loc);
+
         passchange = findViewById(R.id.pd_pass);
         done1 = findViewById(R.id.profile_edit_save);
 
@@ -67,10 +69,11 @@ public class Profile_Edit extends AppCompatActivity {
     }
 
     private void edit_done() {
-        String name, bio, phone;
+        String name, bio, phone,loc;
         name = ed_name.getText().toString().trim();
         bio = ed_bio.getText().toString().trim();
         phone = ed_phone.getText().toString().trim();
+        loc = ed_loc.getText().toString().trim();
 
         if (name.isEmpty()) {
             ed_name.setError("Name Required");
@@ -78,6 +81,9 @@ public class Profile_Edit extends AppCompatActivity {
         } else if (bio.isEmpty()) {
             ed_bio.setError("Bio Required");
             ed_bio.requestFocus();
+        } else if (loc.isEmpty()) {
+            ed_loc.setError("Bio Required");
+            ed_loc.requestFocus();
         } else if (phone.isEmpty()) {
             ed_phone.setError("Bio Required");
             ed_phone.requestFocus();
@@ -85,6 +91,7 @@ public class Profile_Edit extends AppCompatActivity {
             curr_user.setName(name);
             curr_user.setBio(bio);
             curr_user.setPhone(phone);
+            curr_user.setLoc(loc);
             try {
                 db.updateUser(curr_user);
                 Toast.makeText(this, "Sucessful", Toast.LENGTH_SHORT).show();
@@ -109,6 +116,7 @@ public class Profile_Edit extends AppCompatActivity {
         ed_bio.setText(curr_bio);
         ed_email.setText(curr_email);
         ed_phone.setText(curr_phone);
+        ed_loc.setText(curr_loc);
 
     }
 

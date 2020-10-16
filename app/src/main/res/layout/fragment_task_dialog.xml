@@ -154,17 +154,6 @@
                 android:inputType="number"
                 android:paddingStart="5dp" />
 
-            <Button
-                android:id="@+id/cur_loc"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:paddingStart="5dp"
-                android:text="@string/current_loc"
-                android:textSize="14sp"
-                app:layout_constraintTop_toBottomOf="@+id/edtlon" />
         </LinearLayout>
 
     </LinearLayout>

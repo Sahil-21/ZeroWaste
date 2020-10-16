@@ -23,7 +23,7 @@ public interface NoteDao {
     @Query("Update note_table SET ITERATOR=0,AF_URL= null,BF_URL=null,BF_TIMESTAMP='1',AF_TIMESTAMP ='2'")
     void deleteAllNotes();
 
-    @Query("SELECT * FROM note_table ORDER BY BID DESC")
+    @Query("SELECT * FROM note_table ORDER BY BID ASC")
     LiveData<List<Note>> getAllNotes();
 
     @Query("SELECT * FROM note_table WHERE ITERATOR =0")

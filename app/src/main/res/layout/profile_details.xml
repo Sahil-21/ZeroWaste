@@ -60,8 +60,8 @@
                     android:drawableStart="@drawable/profile"
                     android:drawablePadding="5dp"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:hint="Name"
+                    android:inputType="textPersonName" />
 
                 <EditText
                     android:id="@+id/pd_edBio"
@@ -77,6 +77,18 @@
                     android:gravity="start|top"
                     android:hint="@string/bio"
                     android:inputType="textMultiLine" />
+
+                <EditText
+                    android:id="@+id/pd_loc"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/space_transparent"
+                    android:drawableStart="@drawable/location"
+                    android:drawablePadding="5dp"
+                    android:ems="10"
+                    android:hint="Location"
+                    android:inputType="textPersonName" />
 
                 <EditText
                     android:id="@+id/pd_edphone"

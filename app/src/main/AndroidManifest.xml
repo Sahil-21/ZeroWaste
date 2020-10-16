@@ -32,39 +32,24 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
+        <activity android:name=".MapsActivity"           android:label="@string/title_activity_maps" />
         <activity android:name=".Sign_up" />
-        <activity
-            android:name=".note.note_add_Frag"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".note.note_main"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".map.Map_item_view"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".historicdata.data_main" />
+        <activity android:name=".About"                   android:parentActivityName=".MainActivity"/>
+        <activity android:name=".note.note_add_Frag"      android:parentActivityName=".MainActivity" />
+        <activity android:name=".note.note_main"          android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Settings"                android:parentActivityName=".MainActivity"/>
+        <activity android:name=".map.Map_item_view"       android:parentActivityName=".MainActivity" />
+        <activity android:name=".historicdata.data_main"  android:parentActivityName=".MainActivity" />
         <activity android:name=".Profile_Edit" />
-        <activity
-            android:name=".Profile_Change_Password"
-            android:parentActivityName=".Profile_Edit" />
-        <activity
-            android:name=".Task_Individual"
-            android:parentActivityName=".MainActivity" />
+        <activity android:name=".Profile_Change_Password" android:parentActivityName=".Profile_Edit" />
+        <activity android:name=".Task_Individual"         android:parentActivityName=".MainActivity" />
         <activity android:name=".Login" />
-        <activity
-            android:name=".MessageFragment"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".Profile"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MessageFragment"         android:parentActivityName=".MainActivity" />
+        <activity android:name=".Profile"                 android:parentActivityName=".MainActivity" />
+        <activity android:name=".MainActivity"            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

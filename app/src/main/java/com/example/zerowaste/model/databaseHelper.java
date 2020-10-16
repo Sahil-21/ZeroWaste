@@ -66,7 +66,7 @@ public class databaseHelper extends SQLiteOpenHelper {
         String phone ="Add Phone Number";
         String bio ="Add Bio";
         String loc ="Add loc";
-        String prof ="null";
+        String prof ="null1";
         ContentValues values = new ContentValues();
         values.put(COLUMN_USER_NAME, name);
         values.put(COLUMN_USER_EMAIL, email);

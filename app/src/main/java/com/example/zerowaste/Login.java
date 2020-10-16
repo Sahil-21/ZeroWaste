@@ -105,4 +105,10 @@ public class Login extends AppCompatActivity {
     public void Open_SignUp(View view){
         startActivity(new Intent(this, Sign_up.class));
     }
+
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(false);
+    }
 }
