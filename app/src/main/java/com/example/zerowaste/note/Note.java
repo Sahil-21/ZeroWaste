@@ -19,7 +19,6 @@ public class Note {
     private String TIMESTAMP;
 
     public Note(int BID, int PID, double LAT, double LON, int ITERATOR, String BF_TIMESTAMP, String BF_URL, String AF_TIMESTAMP, String AF_URL, String TIMESTAMP) {
-
         this.BID = BID;
         this.PID = PID;
         this.LAT = LAT;
@@ -34,45 +33,34 @@ public class Note {
     public void setId(int id) {
         this.id = id;
     }
-
     public int getId() { return id; }
-
     public int getBID() {
         return BID;
     }
-
     public int getPID() {
         return PID;
     }
-
     public double getLAT() {
         return LAT;
     }
-
     public double getLON() {
         return LON;
     }
-
     public int getITERATOR() {
         return ITERATOR;
     }
-
     public String getBF_TIMESTAMP() {
         return BF_TIMESTAMP;
     }
-
     public String getBF_URL() {
         return BF_URL;
     }
-
     public String getAF_TIMESTAMP() {
         return AF_TIMESTAMP;
     }
-
     public String getAF_URL() {
         return AF_URL;
     }
-
     public String getTIMESTAMP() {
         return TIMESTAMP;
     }

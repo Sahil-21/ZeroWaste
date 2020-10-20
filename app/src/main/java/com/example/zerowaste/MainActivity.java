@@ -131,21 +131,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         Date c = Calendar.getInstance().getTime();
         SimpleDateFormat df = new SimpleDateFormat("dd", Locale.getDefault());
-        //  ts2 = String.valueOf(df.format(c));
-        ts2 = "11";
-        Toast.makeText(this, ts1, Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, ts2, Toast.LENGTH_SHORT).show();
+        ts2 = String.valueOf(df.format(c));
+     //   ts2 = "11";
+   //     Toast.makeText(this, ts1, Toast.LENGTH_SHORT).show();
+   //     Toast.makeText(this, ts2, Toast.LENGTH_SHORT).show();
         if (Integer.valueOf(ts1) != Integer.valueOf(ts2)) {
-            Toast.makeText(this, ts1, Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, ts2, Toast.LENGTH_SHORT).show();
+           Toast.makeText(this, ts1, Toast.LENGTH_SHORT).show();
+           Toast.makeText(this, ts2, Toast.LENGTH_SHORT).show();
             noteViewModel.deleteAllNotes();
-      //      Toast.makeText(this, "All notes deleted", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "All notes deleted", Toast.LENGTH_SHORT).show();
             FileOutputStream fos = null;
 
             try {
                 fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
                 fos.write(ts2.getBytes());
-        //        Toast.makeText(this, "Saved to " + getFilesDir() + "/" + FILE_NAME, Toast.LENGTH_LONG).show();
+                //        Toast.makeText(this, "Saved to " + getFilesDir() + "/" + FILE_NAME, Toast.LENGTH_LONG).show();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -181,7 +181,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void loadData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         curr_email = sharedPreferences.getString(EMAIL, "null");
-        Toast.makeText(this, curr_email, Toast.LENGTH_SHORT).show();
+    //    Toast.makeText(this, curr_email, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -237,6 +237,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
+        moveTaskToBack(false);
     }
-
 }

@@ -16,7 +16,7 @@ public interface DataDao {
     @Insert
     void insert(Data data);
 
-    @Query("SELECT * FROM data_table ORDER BY id ASC")
+    @Query("SELECT * FROM data_table ORDER BY pk DESC")
     LiveData<List<Data>> getAllDatas();
 
 }

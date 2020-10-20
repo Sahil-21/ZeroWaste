@@ -41,8 +41,8 @@ public class Login extends AppCompatActivity {
         email = findViewById(R.id.EmailAddress);
         password = findViewById(R.id.Password2);
         login = findViewById(R.id.login_button1);
-        google_login = findViewById(R.id.google_login);
-        facebook_login = findViewById(R.id.facebook_login);
+   //     google_login = findViewById(R.id.google_login);
+    //    facebook_login = findViewById(R.id.facebook_login);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

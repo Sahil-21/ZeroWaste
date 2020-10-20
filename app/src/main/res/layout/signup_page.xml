@@ -165,7 +165,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/roundbutton"
         android:text="@string/createcc"
@@ -175,57 +175,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edpasswordsign" />
 
-    <TextView
-        android:id="@+id/ortv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="@string/Or"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_acc_button" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ortv">
-
-        <Button
-            android:id="@+id/btngooglesign"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/btngoogle"
-            android:drawableLeft="@drawable/google1"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="@string/signgoogle" />
-
-        <Button
-            android:id="@+id/btnfbsignin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/btngoogle"
-            android:drawableStart="@drawable/facebook1"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="@string/signfacebook" />
-
-    </LinearLayout>
+        tools:layout_editor_absoluteY="611dp"/>
 
     <TextView
         android:id="@+id/signintologin"

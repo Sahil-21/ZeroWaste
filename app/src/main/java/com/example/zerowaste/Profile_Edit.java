@@ -111,7 +111,7 @@ public class Profile_Edit extends AppCompatActivity {
 
 
     private void set_values() {
-        Toast.makeText(this, curr_name, Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(this, curr_name, Toast.LENGTH_SHORT).show();
         ed_name.setText(curr_name);
         ed_bio.setText(curr_bio);
         ed_email.setText(curr_email);
@@ -123,7 +123,7 @@ public class Profile_Edit extends AppCompatActivity {
     private void loadData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         curr_email = sharedPreferences.getString(EMAIL,"null");
-        Toast.makeText(this, curr_email, Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(this, curr_email, Toast.LENGTH_SHORT).show();
 
     }
 }

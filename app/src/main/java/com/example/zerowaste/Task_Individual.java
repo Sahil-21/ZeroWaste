@@ -109,14 +109,14 @@ public class Task_Individual extends AppCompatActivity implements View.OnClickLi
         if (BF_URL == null) {
         } else {
             File f = new File(BF_URL);
-            Toast.makeText(this, "Updating 2nd time txt", Toast.LENGTH_SHORT).show();
+  //          Toast.makeText(this, "Updating 2nd time txt", Toast.LENGTH_SHORT).show();
             before.setImageURI(Uri.fromFile(f));
         }
 
         if (AF_URL == null) {
         } else {
             File f1 = new File(AF_URL);
-            Toast.makeText(this, "Updatime txt", Toast.LENGTH_SHORT).show();
+      //      Toast.makeText(this, "Updatime txt", Toast.LENGTH_SHORT).show();
             after.setImageURI(Uri.fromFile(f1));
         }
 
@@ -231,7 +231,7 @@ public class Task_Individual extends AppCompatActivity implements View.OnClickLi
         if (requestCode == CAMERA_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
                 File f15 = new File(main_url);
-                Toast.makeText(this, main_url, Toast.LENGTH_SHORT).show();
+       //         Toast.makeText(this, main_url, Toast.LENGTH_SHORT).show();
                 if (flag == 0) {
                     BF_URL = main_url;
                     before.setImageURI(Uri.fromFile(f15));
